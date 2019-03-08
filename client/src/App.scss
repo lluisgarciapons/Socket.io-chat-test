@@ -1,0 +1,170 @@
+$light-theme-color: #222;
+$light-theme-background-primary: #eee;
+$light-theme-background-secondary: rgb(255, 255, 255);
+$light-theme-self-message: rgb(166, 255, 76);
+$light-theme-guest-message: rgb(218, 234, 255);
+$light-theme-self-shadow: #327d51;
+$light-theme-guest-shadow: #32617d;
+
+$dark-theme-color: #eee;
+$dark-theme-background-primary: #222;
+$dark-theme-background-secondary: rgb(49, 49, 49);
+$dark-theme-self-message: rgb(113, 139, 86);
+$dark-theme-guest-message: rgb(86, 115, 139);
+$dark-theme-shadow: #222;
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: $light-theme-background-secondary;
+}
+.bold {
+  font-weight: bold;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: flex-end;
+  div {
+    width: 100%;
+  }
+}
+
+.scrollable-messages {
+  max-height: 450px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  border: 1px solid rgb(153, 153, 153);
+  border-radius: 3px;
+  margin: 4px;
+}
+
+.messages {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 450px;
+  margin: 0 !important;
+  background-color: $light-theme-background-primary;
+}
+
+.scrollable-messages::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-box {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  margin-left: 3px !important;
+  background-color: $light-theme-guest-message;
+  box-shadow: 0px 2px 5px $light-theme-guest-shadow;
+  color: $light-theme-color;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.comment-user {
+  font-weight: bold;
+}
+
+.comment-message {
+  max-width: 90%;
+  text-align: left;
+  padding-left: 5px;
+  margin: 0;
+  word-break: break-word;
+}
+
+.comment-time {
+  align-self: flex-end;
+  font-weight: lighter;
+  font-size: 60%;
+  font-style: italic;
+}
+
+.my-message {
+  align-self: flex-end;
+  text-align: right;
+  /* margin-left: 38%; */
+  margin-right: 5px;
+  background-color: $light-theme-self-message;
+  box-shadow: 0px 2px 5px $light-theme-self-shadow;
+  color: $light-theme-color;
+}
+
+.my-message .comment-user {
+  display: none;
+}
+
+.my-message .comment-message {
+  align-self: flex-end;
+}
+
+.navbar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.link {
+  color: $light-theme-color;
+  background-color: $light-theme-background-primary;
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+.App.dark {
+  background-color: $dark-theme-background-secondary;
+  color: $dark-theme-color;
+  .messages {
+    background-color: $dark-theme-background-primary;
+  }
+  .comment-box {
+    background-color: $dark-theme-guest-message;
+    box-shadow: 0px 2px 5px $dark-theme-shadow;
+    color: $dark-theme-color;
+  }
+  .my-message {
+    background-color: $dark-theme-self-message;
+    box-shadow: 0px 2px 5px $dark-theme-shadow;
+    color: $dark-theme-color;
+  }
+  .form-control {
+    color: $dark-theme-color;
+  }
+
+  .settings {
+    background-color: $dark-theme-background-primary;
+  }
+
+  .link {
+    color: $dark-theme-color;
+    background-color: $dark-theme-background-primary;
+  }
+}
+
+.settings {
+  height: 450px;
+  background-color: $light-theme-background-primary;
+  div {
+    margin-bottom: 20px;
+  }
+}
+
+.unread {
+  position: absolute;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 100%;
+  color: white;
+  text-align: center;
+}
